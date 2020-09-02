@@ -44,12 +44,14 @@ public class ClienteController {
     @GetMapping("/clientes/{id}")
     public Cliente getCliente(@PathVariable int id){
         Cliente cliente = null;
-        
-        
-        
-        return cliente;
 
-
-    }
     
+        for(Cliente aux : clientes){
+            if(aux.id == id){
+                cliente = aux;
+                break;
+            }
+        }
+    return cliente;
+    }
 }
